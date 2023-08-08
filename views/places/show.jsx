@@ -103,6 +103,9 @@ function Show(data) {
                             type='checkbox'
                             id='rant'
                             name='rant'
+                            value='true'
+                            onChange='true'
+                            
                         />
                     </div>
                     <br />
