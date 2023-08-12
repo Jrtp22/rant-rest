@@ -65,7 +65,7 @@ function Show(data) {
                 <h2>Add a Comment</h2>
                 <form action={`/places/${data.place.id}/comment`} method='POST'>
                     <div className='row'>
-                        <div className='form-group col-xl-6'>
+                        <div className='form-group col-xl'>
                             <label htmlFor='comment'>Comment</label>
                             <input
                                 className='form-group'

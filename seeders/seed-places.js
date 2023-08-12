@@ -1,6 +1,6 @@
 const db = require('../models')
 
-/* db.Place.create([{
+db.Place.create([{
     name: 'H-Thai-ML',
     city: 'Seattle',
     state: 'WA',
@@ -23,4 +23,3 @@ const db = require('../models')
     console.log('Failure!', err)
     process.exit()
 })
- */
