@@ -4,8 +4,7 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
-const Home = require('./views/Home.jsx')
-const Error404 = require('./views/Error404.jsx')
+
 
 //middleware
 app.set('views', __dirname + '/views')
@@ -14,19 +13,19 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 //controllers
 app.use('/places', require('./controllers/places'))
 
 // home page
 app.get('/', (req, res) => {
-    res.render(Home)
+    res.render("Home")
 })
 
 //wildcard
 app.get('*', (req, res) => {
-    res.render(Error404)
+    res.render("Error404")
 })
 
 // start server
