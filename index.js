@@ -4,6 +4,8 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+const Home = require('./views/Home.jsx')
+const Error404 = require('./views/Error404.jsx')
 
 //middleware
 app.set('views', __dirname + '/views')
@@ -19,12 +21,12 @@ app.use('/places', require('./controllers/places'))
 
 // home page
 app.get('/', (req, res) => {
-    res.render('Home.jsx')
+    res.render(Home)
 })
 
 //wildcard
 app.get('*', (req, res) => {
-    res.render('Error404.jsx')
+    res.render(Error404)
 })
 
 // start server
