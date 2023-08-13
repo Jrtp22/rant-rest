@@ -20,12 +20,12 @@ app.use('/places', require('./controllers/places'))
 
 // home page
 app.get('/', (req, res) => {
-    res.render("Home")
+    res.render('Home')
 })
 
 //wildcard
 app.get('*', (req, res) => {
-    res.render("Error404")
+    res.render('Error404')
 })
 
 // start server
