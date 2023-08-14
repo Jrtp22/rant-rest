@@ -6,6 +6,7 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
 
+
 //middleware
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
@@ -20,14 +21,20 @@ app.use('/places', require('./controllers/places'))
 
 // home page
 app.get('/', (req, res) => {
-    res.render('Home')
-})
+    res.render('Home.jsx', (err, html) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Internal Server Error');
+        }
+        res.send(html);
+    });
+});
 
 //wildcard
 app.get('*', (req, res) => {
-    res.render('Error404')
+    res.render('Error404.jsx')
 })
-
+console.log('__dirname:', __dirname);
 // start server
 app.listen(process.env.PORT)
 
