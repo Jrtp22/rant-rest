@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 
 
 //middleware
-app.set('views', __dirname + '/views')
+//app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
     res.render('Error404.jsx')
 })
-console.log('__dirname:', __dirname);
+
 // start server
 app.listen(process.env.PORT)
 
